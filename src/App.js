@@ -1,51 +1,59 @@
- import React from 'react';
- import logo from './logo.svg';
- import './App.css';
- //import MyButton from './components/button';
-
-
- function MyButton(){
-  return(
-    <button>Get started..</button>
-  )
-  
-}
-
-function Reactelements(){
-return(
-   <>
-   1.Component-based architecture<br/>
-   2.Virtual DOM for efficient updates<br/>
-   3.Rich ecosystem and community<br/>
-   4.cross-platform development<br/>
-   5.strong community supoort<br/>
-
-   </>
-)
-
-}
-function Reactlogo(){
-  return(
-
- <img src={logo} className="App-logo" alt="logo" />
-  )
-}
-
+import React from 'react';
+import './App.css';
+import Button from './button';
+import './button.css'
 function App() {
-  return (
+
+  const headingStyle = {
+    color : 'black',
+
+  }
+
+  const ButtonStyle = {
+    color : 'white' ,
+    border : 'none' ,
+    height : '50px' ,
+    width : '50px' ,
+    marginRight : '20px' ,
+    borderRadius : '50%' ,
+    fontWeight : '700' ,
+    backgroundColor : 'blue'
+  } 
+
+  function Card2(){
+    alert("Madhuri bandgar")
+  }
+
+  function Card3 () {
+    alert('Shreeram bandgar')
+
+  }
+return (
     <div className="App">
-      <header className="App-header">
+    <div style={{ margin: '100px' }}>
+      <img src="https://reactjs.org/logo-og.png" alt="react logo" style={{ width: '400px', }}/>
+    </div>
+     
+      <h2 style={{color : 'black'}}>Learner at FunctionUP</h2>
+      <h1 style = {headingStyle}>Ashlesha Chandrakant BAndgar</h1>
+      <h4 className='headingFour'>FunctionUp helping me to buils career in Web development.<br/>
+      Until now I have learned HTML, CSS, Javascript and now I am learning ReactJs.<br/>
+      I am looking forward more to learn new things at FunctionUp.</h4>
 
-      <Reactlogo/>
-      <Reactelements/>
-      <MyButton/>
+      <Button/>
 
-        
-      </header>
+      <Button
+        buttonText = 'Card2'
+        onClickFunction = {Card2}
+        buttonStyle = {ButtonStyle}/>
+    
+      <Button 
+         buttonText = 'Card3'
+         onClickFunction = {Card3}
+         buttonStyle = {ButtonStyle}
+        externalClassName = 'externalStyleBtn'
+      />
       </div>
-        
   );
 }
-
-export default App;
-
+export default App
